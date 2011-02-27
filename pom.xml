@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ro.zg.java-forms-core</groupId>
+  <artifactId>ro.zg.java-forms-core</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>java-forms-core</name>
+  <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+               <source>1.5</source>
+               <target>1.5</target>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>ro.zg</groupId>
+  		<artifactId>commons</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>cfg-engine</groupId>
+  		<artifactId>cfg-engine</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>
