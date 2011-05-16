@@ -23,5 +23,6 @@ public class ComponentTypes {
     public static final String LABEL = "LABEL";
     public static final String LIST = "LIST";
     public static final String BUTTON = "BUTTON";
+    public static final String SECRET = "SECRET";
     
 }
