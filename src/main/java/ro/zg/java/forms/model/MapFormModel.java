@@ -218,8 +218,8 @@ public class MapFormModel extends ObjectFormModel {
 		    currentAvailableKeys.add(0, key);
 		}
 		// System.out.println("currentAvailableKeys="+currentAvailableKeys);
-		ComponentConfig newc = getComponentConfig(keyName, keyComponent.getUiType(), key, currentAvailableKeys
-			.toArray());
+		ComponentConfig newc = getComponentConfig(keyName, keyComponent.getUiType(), key,
+			currentAvailableKeys.toArray());
 		addComponent(newc);
 		referencesMap.put(keyName, key);
 		/*
@@ -468,9 +468,27 @@ public class MapFormModel extends ObjectFormModel {
 
     }
 
-    @Override
-    public void onNestedValueChanged(PropertyChangeEvent event) {
-
-    }
-
+//    @Override
+//    public PropertyChangeEvent onNestedValueChanged(PropertyChangeEvent event) {
+//	String propertyName = event.getPropertyName();
+//	
+//	/* if the value has changed, make sure to modify the path with the actual key , 
+//	 * in order for the property to be correctly identified */
+//	if (propertyName.startsWith("value")) {
+//	    String rest="";
+//	    int keyIndexEnd = propertyName.length();
+//	    int index = propertyName.indexOf(".");
+//	    if( index > 0) {
+//		rest = propertyName.substring(index);
+//		keyIndexEnd=index;
+//	    }
+//	    String keyName = "key" + propertyName.substring(5,keyIndexEnd);
+//	    Object key = referencesMap.get(keyName);
+//	    if (key != null) {
+//		return new PropertyChangeEvent(event.getSource(), key.toString()+rest,event.getOldValue(),event.getNewValue());
+//	    }
+//	}
+//	
+//	return event;
+//    }
 }

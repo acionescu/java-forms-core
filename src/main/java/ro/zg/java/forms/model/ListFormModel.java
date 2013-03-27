@@ -207,15 +207,4 @@ public class ListFormModel extends ObjectFormModel {
 
     }
 
-    @Override
-    public void onNestedValueChanged(PropertyChangeEvent event) {
-	// System.out.println("List: "+event.getOldValue()+"->"+event.getNewValue()+" for "+event.getPropertyName());
-	// String propName=event.getPropertyName();
-	// int index = propName.lastIndexOf(".");
-	// if(index >= 0){
-	// System.out.println(getObjectForProperty(propName.substring(0,index)));
-	// }
-	// System.out.println(subforms);
-    }
-
 }

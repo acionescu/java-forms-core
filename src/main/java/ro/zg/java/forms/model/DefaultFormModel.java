@@ -153,7 +153,7 @@ public class DefaultFormModel extends ObjectFormModel {
     }
 
     @Override
-    public void onNestedValueChanged(PropertyChangeEvent event) {
+    public PropertyChangeEvent onNestedValueChanged(PropertyChangeEvent event) {
 //	 System.out.println("Default: " + event.getOldValue() + "->" + event.getNewValue() + " for "
 //	 + event.getPropertyName());
 	String propName = event.getPropertyName();
@@ -174,6 +174,6 @@ public class DefaultFormModel extends ObjectFormModel {
 		}
 	    }
 	}
-
+	return event;
     }
 }

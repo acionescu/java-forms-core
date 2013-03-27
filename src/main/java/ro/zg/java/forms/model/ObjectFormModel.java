@@ -227,7 +227,15 @@ public abstract class ObjectFormModel implements Cloneable {
 	return resp;
     }
 
-    public abstract void onNestedValueChanged(PropertyChangeEvent event);
+    /**
+     * Override this if you want to do special data handling, modify or block the event propagated further
+     * 
+     * @param event
+     * @return
+     */
+    public PropertyChangeEvent onNestedValueChanged(PropertyChangeEvent event) {
+	return event;
+    }
 
     public void addPropertyChangeListener(PropertyChangeListener pcl) {
 	propertyChangeSupport.addPropertyChangeListener(pcl);
@@ -610,8 +618,8 @@ public abstract class ObjectFormModel implements Cloneable {
 
     protected void onNestedFormConfigChanged(PropertyChangeEvent evt) {
 	// System.out.println("nested form changed : "+evt.getPropertyName());
-	formConfigChangeSupport.firePropertyChange(formConfig.getFieldName() + "." + evt.getPropertyName(), evt
-		.getOldValue(), evt.getNewValue());
+	formConfigChangeSupport.firePropertyChange(formConfig.getFieldName() + "." + evt.getPropertyName(),
+		evt.getOldValue(), evt.getNewValue());
 	// ui.validate();
 	refresh();
     }
@@ -704,8 +712,8 @@ public abstract class ObjectFormModel implements Cloneable {
 	public void onEvent(Object event) {
 	    if (actionListener != null) {
 		ActionEvent ae = (ActionEvent) event;
-		ActionEvent newEvent = new ActionEvent(ae.getSource(), ae.getID(), actionName, ae.getWhen(), ae
-			.getModifiers());
+		ActionEvent newEvent = new ActionEvent(ae.getSource(), ae.getID(), actionName, ae.getWhen(),
+			ae.getModifiers());
 		actionListener.actionPerformed(newEvent);
 	    }
 
@@ -729,9 +737,11 @@ public abstract class ObjectFormModel implements Cloneable {
 	    }
 	    PropertyChangeEvent newEvent = new PropertyChangeEvent(evt.getSource(), fullPropName, evt.getOldValue(),
 		    evt.getNewValue());
-	    onNestedValueChanged(newEvent);
-	    // propertyChangeSupport.firePropertyChange(newEvent);
-	    propertyChangeSupport.firePropertyChange(fullPropName, evt.getOldValue(), evt.getNewValue());
+
+	    newEvent = onNestedValueChanged(newEvent);
+	    if (newEvent != null) {
+		propertyChangeSupport.firePropertyChange(newEvent.getPropertyName(), newEvent.getOldValue(), newEvent.getNewValue());
+	    }
 	}
     }
 
