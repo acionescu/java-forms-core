@@ -1,0 +1,29 @@
+/**
+ * java-forms-core - Support framework to generate java forms
+ * Copyright (C) 2009  Adrian Cristian Ionescu - https://github.com/acionescu
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package net.segoia.java.forms;
+
+public class ComponentTypes {
+    public static final String TEXTFIELD = "TEXTFIELD";
+    public static final String TEXTAREA = "TEXTAREA";
+    public static final String COMBOBOX = "COMBOBOX";
+    public static final String CHECKBOX = "CHECKBOX";
+    public static final String LABEL = "LABEL";
+    public static final String LIST = "LIST";
+    public static final String BUTTON = "BUTTON";
+    public static final String SECRET = "SECRET";
+    
+}
