@@ -20,7 +20,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>net.segoia</groupId>
    <artifactId>java-forms-core</artifactId>
-   <version>0.0.1</version>
+   <version>0.0.2-SNAPSHOT</version>
    <name>java-forms-core</name>
    <description>Support framework to generate java forms</description>
    <url>https://github.com/acionescu/java-forms-core</url>
